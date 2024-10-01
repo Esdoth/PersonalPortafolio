@@ -1,0 +1,268 @@
+:root {
+    --main-light-gray: #f9f9f9;
+    --text-color: black;
+    --background-color: #d6c3b8;
+    --hover-background-color: #d3aa89;
+    --hover-text-color: #973e03;
+    --project-background: #292931;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-light-gray);
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    box-shadow: -5px 1px 15px rgba(0, 0, 0, 0.5);
+}
+
+header .nav-list {
+    display: flex;
+}
+
+header li {
+    margin: 0 1rem;
+    list-style: none;
+}
+
+header li a {
+    transition: background-color 0.5s ease;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+header li a:hover {
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-right: 1rem;
+}
+
+.logo p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-div {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1.5rem;
+}
+
+h1, h2 {
+    font-weight: 700;
+    text-align: center;
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(65deg, #eeeded, #756f6f);
+}
+
+.projects-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: #725e48;
+    min-height: 100vh;
+}
+
+.projects-section h2 {
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project {
+    width: 300px;
+    height: 350px;
+    background: var(--project-background);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+}
+
+.project p {
+    margin-top: 1rem;
+    color: white;
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.project a {
+    color: white;
+}
+
+.project p::before,
+.project p::after {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.project:hover p::before {
+    content: "<  ";
+    margin-right: 0.2rem;
+    opacity: 1;
+}
+
+.project:hover p::after {
+    content: "/ >";
+    margin-left: 0.2rem;
+    opacity: 1;
+}
+
+.project p {
+    transition: color 0.7s ease;
+    font-size: 1.2rem;
+}
+
+.project:hover p {
+    color: #e28229;
+}
+
+.contact-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0 2rem;
+    background: #584639;
+    color: white;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    font-size:2rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+    transform: translateY(5px)
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 800px) {
+    .logo {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-div {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        padding-bottom: 0.3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .projects-section {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+    }
+
+}
